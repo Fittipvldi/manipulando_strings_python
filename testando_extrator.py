@@ -1,9 +1,10 @@
 from ExtratorArgumentosUrl import ExtratorArgumentosUrl
 
-url = 'moedaorigem=real&moedadestino=dolar'
+url = 'https://www.cambio.com.br/cambio?moedaorigem=real&moedadestino=dolar&valor=150'
 
-'''argumentosUrl = ExtratorArgumentosUrl(url) # instanciando o objeto
+argumentosUrl = ExtratorArgumentosUrl(url) # instancia
 
-moedaOrigem, moedaDestino = argumentosUrl.extrai_argumentos() # chamando o método extrai_argumentos
-print(moedaOrigem, moedaDestino)'''
+moedaOrigem, moedaDestino = argumentosUrl.extrai_argumentos()
+valor = argumentosUrl.extraiValor()
 
+print(moedaOrigem, moedaDestino, valor)
