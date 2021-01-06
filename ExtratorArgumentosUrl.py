@@ -5,6 +5,9 @@ class ExtratorArgumentosUrl:
         else:
             raise LookupError('URL inválida!')
 
+    def __len__(self):
+        return len(self.url)
+
     @staticmethod           # método estático, no qual não necessita do self
     def urlEhValida(url):
         if url and url.startswith('https://www.cambio.com'):  # se a tiver algo na URL = True senao False && deve começar com 'https://cambio..'
