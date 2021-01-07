@@ -8,6 +8,14 @@ class ExtratorArgumentosUrl:
     def __len__(self):
         return len(self.url)
 
+    def __str__(self):
+        moedaOrigem, moedaDestino = self.extrai_argumentos()
+        representacaoString = 'Valor:' + self.extraiValor() + ' moeda origem: ' + moedaOrigem + 'moeda destino: ' + moedaDestino
+        return representacaoString
+
+    def __eq__(self, outraInstancia):
+        return self.url == outraInstancia.url
+
     @staticmethod           # método estático, no qual não necessita do self
     def urlEhValida(url):
         if url and url.startswith('https://www.cambio.com'):  # se a tiver algo na URL = True senao False && deve começar com 'https://cambio..'
